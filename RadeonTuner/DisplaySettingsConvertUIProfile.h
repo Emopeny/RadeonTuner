@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -151,11 +151,11 @@ namespace winrt::RadeonTuner::implementation
 			{
 				bool settingValue = displaySettings.EyefinityAutomatic.Get(settingType).value();
 				toggleswitch_Eyefinity_Automatic().IsOn(settingValue);
-				textblock_Eyefinity_Automatic_Value().Text(settingValue ? L"Enabled" : L"Disabled");
+				textblock_Eyefinity_Automatic_Value().Text(settingValue ? L"已启用" : L"已禁用");
 			}
 			else
 			{
-				textblock_Eyefinity_Automatic_Value().Text(L"Disabled");
+				textblock_Eyefinity_Automatic_Value().Text(L"已禁用");
 			}
 
 			//Return result

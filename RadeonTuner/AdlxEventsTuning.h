@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -19,7 +19,7 @@ namespace winrt::RadeonTuner::implementation
 			//Check selected items
 			if (selectedAppsCount == 0)
 			{
-				ShowNotification(L"No applications selected");
+				ShowNotification(L"未选择任何应用程序");
 				AVDebugWriteLine(L"No applications selected.");
 				co_return;
 			}
@@ -50,7 +50,7 @@ namespace winrt::RadeonTuner::implementation
 
 			//Show notification
 			//Fix show fail and duplicate count
-			ShowNotification(L"Applications added: " + number_to_wstring(addCount) + L" / " + number_to_wstring(selectedAppsCount));
+			ShowNotification(L"已添加应用程序： " + number_to_wstring(addCount) + L" / " + number_to_wstring(selectedAppsCount));
 			AVDebugWriteLine(L"Applications added: " << addCount << L" / " << selectedAppsCount);
 		}
 		catch (...) {}
@@ -70,7 +70,7 @@ namespace winrt::RadeonTuner::implementation
 			//Check selected items
 			if (selectedAppsCount == 0)
 			{
-				ShowNotification(L"No applications selected");
+				ShowNotification(L"未选择任何应用程序");
 				AVDebugWriteLine(L"No applications selected.");
 				co_return;
 			}
@@ -112,7 +112,7 @@ namespace winrt::RadeonTuner::implementation
 
 			//Show notification
 			//Fix show fail and duplicate count
-			ShowNotification(L"Applications removed: " + number_to_wstring(removeCount) + L" / " + number_to_wstring(selectedAppsCount));
+			ShowNotification(L"已移除的应用程序： " + number_to_wstring(removeCount) + L" / " + number_to_wstring(selectedAppsCount));
 			AVDebugWriteLine(L"Applications removed: " << removeCount << L" / " << selectedAppsCount);
 
 			//Check selected application and reload
@@ -159,20 +159,20 @@ namespace winrt::RadeonTuner::implementation
 				if (applyResult)
 				{
 					//Show notification
-					ShowNotification(L"Tuning and fans settings applied");
+					ShowNotification(L"调校与风扇设置已应用");
 					AVDebugWriteLine(L"Tuning and fans settings applied: " << deviceIdW << L" / " << applicationW);
 				}
 				else
 				{
 					//Show notification
-					ShowNotification(L"Failed applying tuning and fans settings");
+					ShowNotification(L"应用调校和风扇设置失败");
 					AVDebugWriteLine(L"Failed applying tuning and fans settings: " << deviceIdW << L" / " << applicationW);
 				}
 			}
 			else
 			{
 				//Show notification
-				ShowNotification(L"Tuning and fans settings adjusted");
+				ShowNotification(L"调校与风扇设置已调整");
 				AVDebugWriteLine(L"Tuning and fans settings adjusted: " << deviceIdW << L" / " << applicationW);
 			}
 
@@ -190,8 +190,8 @@ namespace winrt::RadeonTuner::implementation
 			if (disable_saving) { co_return; }
 
 			//Confirm reset
-			std::vector<std::wstring> messageAnswers{ L"Yes", L"No" };
-			int messageResult = co_await ShowMessageBox(L"Reset tuning and fans settings?", L"", messageAnswers);
+			std::vector<std::wstring> messageAnswers{ L"是", L"否" };
+			int messageResult = co_await ShowMessageBox(L"重置调校与风扇设置？", L"", messageAnswers);
 			if (messageResult == 1)
 			{
 				co_return;
@@ -221,7 +221,7 @@ namespace winrt::RadeonTuner::implementation
 			}
 
 			//Show notification
-			ShowNotification(L"Tuning and fans settings reset");
+			ShowNotification(L"调校与风扇设置已重置");
 			AVDebugWriteLine(L"Tuning and fans settings reset: " << deviceIdW << L" / " << applicationW);
 
 			//Load tuning and fans settings

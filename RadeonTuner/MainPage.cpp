@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 
 //Launchers
@@ -125,8 +125,8 @@ namespace winrt::RadeonTuner::implementation
 			if (AdlCheckDriverOnlySoftware())
 			{
 				grid_Main().IsHitTestVisible(false);
-				std::vector<std::wstring> messageAnswers{ L"Continue anyways", L"Exit application" };
-				int messageResult = co_await ShowMessageBox(L"Incompatible driver software type", L"It is highly recommended that you install your drivers using the 'Driver Only' software type to prevent possible issues with RadeonTuner.\n\nPlease reinstall your drivers using the 'Driver Only' software type and 'Factory Reset' option, you can find those options by clicking on 'Additional Options' in the Radeon driver setup.", messageAnswers);
+				std::vector<std::wstring> messageAnswers{ L"仍然继续", L"退出应用程序" };
+				int messageResult = co_await ShowMessageBox(L"驱动程序软件类型不兼容", L"强烈建议你使用 'Driver Only' 软件类型安装驱动，以避免 RadeonTuner 出现潜在问题。\n\n请使用 'Driver Only' 软件类型和 'Factory Reset' 选项重新安装驱动，你可以在 Radeon 驱动安装程序中点击 'Additional Options' 找到这些选项。", messageAnswers);
 				if (messageResult == 0)
 				{
 					//Enable interface
@@ -145,8 +145,8 @@ namespace winrt::RadeonTuner::implementation
 			if (!initResult_Adl.empty())
 			{
 				grid_Main().IsHitTestVisible(false);
-				std::vector<std::wstring> messageAnswers{ L"Run AMD Cleanup Utility", L"Exit application" };
-				int messageResult = co_await ShowMessageBox(L"Failed initializing ADL", L"Please (re)install or update your AMD drivers, if this message keeps appearing try using the AMD Cleanup Utility. (" + initResult_Adl + L")", messageAnswers);
+				std::vector<std::wstring> messageAnswers{ L"运行 AMD Cleanup Utility", L"退出应用程序" };
+				int messageResult = co_await ShowMessageBox(L"ADL 初始化失败", L"请（重新）安装或更新你的 AMD 驱动，如果此消息持续出现，请尝试使用 AMD Cleanup Utility。(" + initResult_Adl + L")", messageAnswers);
 				if (messageResult == 0)
 				{
 					//Launch driver cleanup utility
@@ -178,8 +178,8 @@ namespace winrt::RadeonTuner::implementation
 			if (listGpus.size() == 0)
 			{
 				grid_Main().IsHitTestVisible(false);
-				std::vector<std::wstring> messageAnswers{ L"Run AMD Cleanup Utility", L"Exit application" };
-				int messageResult = co_await ShowMessageBox(L"Failed to find any GPU's", L"Please (re)install or update your AMD drivers, if this message keeps appearing try using the AMD Cleanup Utility.", messageAnswers);
+				std::vector<std::wstring> messageAnswers{ L"运行 AMD Cleanup Utility", L"退出应用程序" };
+				int messageResult = co_await ShowMessageBox(L"未能找到任何 GPU", L"请（重新）安装或更新你的 AMD 驱动，如果此消息持续出现，请尝试使用 AMD Cleanup Utility。", messageAnswers);
 				if (messageResult == 0)
 				{
 					//Launch driver cleanup utility
@@ -207,8 +207,8 @@ namespace winrt::RadeonTuner::implementation
 			if (displayList.size() == 0)
 			{
 				grid_Main().IsHitTestVisible(false);
-				std::vector<std::wstring> messageAnswers{ L"Run AMD Cleanup Utility", L"Exit application" };
-				int messageResult = co_await ShowMessageBox(L"Failed to find any displays", L"Please (re)install or update your AMD drivers, if this message keeps appearing try using the AMD Cleanup Utility.", messageAnswers);
+				std::vector<std::wstring> messageAnswers{ L"运行 AMD Cleanup Utility", L"退出应用程序" };
+				int messageResult = co_await ShowMessageBox(L"未找到任何显示器", L"请（重新）安装或更新你的 AMD 驱动，如果此消息持续出现，请尝试使用 AMD Cleanup Utility。", messageAnswers);
 				if (messageResult == 0)
 				{
 					//Launch driver cleanup utility
@@ -269,7 +269,7 @@ namespace winrt::RadeonTuner::implementation
 
 					//Show notification
 					AVDebugWriteLine(L"New application update found");
-					ShowNotification(L"New application update found");
+					ShowNotification(L"发现新的应用程序更新");
 				}
 			}
 
@@ -332,7 +332,7 @@ namespace winrt::RadeonTuner::implementation
 					//Show notification
 					if (!silent)
 					{
-						ShowNotification(L"Showing experimental settings");
+						ShowNotification(L"正在显示实验性设置");
 						AVDebugWriteLine(L"Showing experimental settings");
 					}
 				}
@@ -353,7 +353,7 @@ namespace winrt::RadeonTuner::implementation
 					//Show notification
 					if (!silent)
 					{
-						ShowNotification(L"Hiding experimental settings");
+						ShowNotification(L"正在隐藏实验性设置");
 						AVDebugWriteLine(L"Hiding experimental settings");
 					}
 				}

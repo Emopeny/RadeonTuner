@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "AdlDefinitions.h"
@@ -45,7 +45,7 @@ namespace winrt::RadeonTuner::implementation
 			//Delete all Eyefinity configurations
 			if (Adl_Eyefinity_Delete_All(adl_Display_AdapterIndex))
 			{
-				ShowNotification(L"Removed Eyefinity");
+				ShowNotification(L"已移除 Eyefinity");
 				AVDebugWriteLine(L"Removed Eyefinity");
 
 				//Disable saving
@@ -60,7 +60,7 @@ namespace winrt::RadeonTuner::implementation
 			}
 			else
 			{
-				ShowNotification(L"Failed removing Eyefinity");
+				ShowNotification(L"移除 Eyefinity 失败");
 				AVDebugWriteLine(L"Failed removing Eyefinity");
 			}
 
@@ -83,7 +83,7 @@ namespace winrt::RadeonTuner::implementation
 			//Create custom eyefinity
 			if (Adl_Eyefinity_Create_Custom(adl_Display_AdapterIndex))
 			{
-				ShowNotification(L"Created Eyefinity");
+				ShowNotification(L"已创建 Eyefinity");
 				AVDebugWriteLine(L"Created Eyefinity");
 
 				//Disable saving
@@ -98,7 +98,7 @@ namespace winrt::RadeonTuner::implementation
 			}
 			else
 			{
-				ShowNotification(L"Failed creating Eyefinity");
+				ShowNotification(L"创建 Eyefinity 失败");
 				AVDebugWriteLine(L"Failed creating Eyefinity");
 			}
 
@@ -122,7 +122,7 @@ namespace winrt::RadeonTuner::implementation
 			AdlCustomResult eyefinityResult = Adl_Eyefinity_Toggle(adl_Display_AdapterIndex, true);
 			if (eyefinityResult == AdlCustomResult::CUSTOM_OK)
 			{
-				ShowNotification(L"Enabled Eyefinity");
+				ShowNotification(L"已启用 Eyefinity");
 				AVDebugWriteLine(L"Enabled Eyefinity");
 
 				//Disable saving
@@ -137,12 +137,12 @@ namespace winrt::RadeonTuner::implementation
 			}
 			else if (eyefinityResult == AdlCustomResult::CUSTOM_ALREADY)
 			{
-				ShowNotification(L"Eyefinity already enabled");
+				ShowNotification(L"Eyefinity 已启用");
 				AVDebugWriteLine(L"Eyefinity already enabled");
 			}
 			else
 			{
-				ShowNotification(L"Failed enabling Eyefinity");
+				ShowNotification(L"启用 Eyefinity 失败");
 				AVDebugWriteLine(L"Failed enabling Eyefinity");
 			}
 
@@ -166,7 +166,7 @@ namespace winrt::RadeonTuner::implementation
 			AdlCustomResult eyefinityResult = Adl_Eyefinity_Toggle(adl_Display_AdapterIndex, false);
 			if (eyefinityResult == AdlCustomResult::CUSTOM_OK)
 			{
-				ShowNotification(L"Disabled Eyefinity");
+				ShowNotification(L"已禁用 Eyefinity");
 				AVDebugWriteLine(L"Disabled Eyefinity");
 
 				//Disable saving
@@ -181,12 +181,12 @@ namespace winrt::RadeonTuner::implementation
 			}
 			else if (eyefinityResult == AdlCustomResult::CUSTOM_ALREADY)
 			{
-				ShowNotification(L"Eyefinity already disabled");
+				ShowNotification(L"Eyefinity 已禁用");
 				AVDebugWriteLine(L"Eyefinity already disabled");
 			}
 			else
 			{
-				ShowNotification(L"Failed disabling Eyefinity");
+				ShowNotification(L"禁用 Eyefinity 失败");
 				AVDebugWriteLine(L"Failed disabling Eyefinity");
 			}
 

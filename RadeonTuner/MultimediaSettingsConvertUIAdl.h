@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -27,7 +27,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Video_Upscaling().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Video_Upscaling_Value().Text(valueHint);
 
 				//Enable or disable interface

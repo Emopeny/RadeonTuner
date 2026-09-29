@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -181,12 +181,12 @@ namespace winrt::RadeonTuner::implementation
 			{
 				bool keepActive = tuningFanSettings.KeepActive.Get(settingType).value();
 				toggleswitch_KeepActive().IsOn(keepActive);
-				textblock_KeepActive_Value().Text(keepActive ? L"Enabled" : L"Disabled");
+				textblock_KeepActive_Value().Text(keepActive ? L"已启用" : L"已禁用");
 			}
 			else
 			{
 				toggleswitch_KeepActive().IsOn(false);
-				textblock_KeepActive_Value().Text(L"Disabled");
+				textblock_KeepActive_Value().Text(L"已禁用");
 			}
 
 			//Set result

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -27,7 +27,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Display_HdrEnabled().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Display_HdrEnabled_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -93,7 +93,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Display_VSR().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Display_VSR_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -126,7 +126,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Display_GpuScaling().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Display_GpuScaling_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -159,7 +159,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Display_IntegerScaling().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Display_IntegerScaling_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -324,7 +324,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Display_ColorTemperature_Control().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Display_ColorTemperature_Control_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -566,7 +566,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Display_CVDC_Control().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Display_CVDC_Control_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -722,7 +722,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Display_VariBright().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Display_VariBright_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -787,7 +787,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Display_HDCPSupport().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Display_HDCPSupport_Value().Text(valueHint);
 
 				//Enable or disable interface

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -15,7 +15,7 @@ namespace winrt::RadeonTuner::implementation
 			//Check file path
 			if (importPath.empty())
 			{
-				ShowNotification(L"Graphics not imported, no path set");
+				ShowNotification(L"显卡未导入，未设置路径");
 				AVDebugWriteLine(L"Graphics not imported, no path set");
 				return;
 			}
@@ -29,13 +29,13 @@ namespace winrt::RadeonTuner::implementation
 			GraphicsSettings_Convert_ToUI_Profile(graphicsSettings, AdlSettingGet::Current);
 
 			//Set result
-			ShowNotification(L"Graphics settings imported");
+			ShowNotification(L"显卡设置已导入");
 			AVDebugWriteLine(L"Graphics settings imported");
 		}
 		catch (...)
 		{
 			//Set result
-			ShowNotification(L"Graphics not imported, exception");
+			ShowNotification(L"显卡设置未导入，发生异常");
 			AVDebugWriteLine(L"Graphics not imported, exception");
 		}
 	}

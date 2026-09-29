@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -23,17 +23,17 @@ namespace winrt::RadeonTuner::implementation
 			//Check and set dll path text
 			if (wstring_contains(dllPathLower, system32pathLower))
 			{
-				textblock_FsrDllLoadPath().Text(L"Using default driver FSR library file.");
+				textblock_FsrDllLoadPath().Text(L"正在使用默认驱动的 FSR 库文件。");
 			}
 			else
 			{
-				textblock_FsrDllLoadPath().Text(L"Using custom set FSR library file.");
+				textblock_FsrDllLoadPath().Text(L"正在使用自定义指定的 FSR 库文件。");
 			}
 		}
 		catch (...)
 		{
 			//Set dll path text
-			textblock_FsrDllLoadPath().Text(L"Using unknown FSR library file.");
+			textblock_FsrDllLoadPath().Text(L"正在使用未知的 FSR 库文件。");
 		}
 	}
 

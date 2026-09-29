@@ -55,11 +55,11 @@ namespace winrt::RadeonTuner::implementation
 					//Check if value is offset (RDNA4+)
 					if (tuningFanSettings.CoreMax.Minimum.value() < 0)
 					{
-						textblock_Core_Max().Text(L"Maximum Frequency Offset");
+						textblock_Core_Max().Text(L"最大频率偏移");
 					}
 					else
 					{
-						textblock_Core_Max().Text(L"Maximum Frequency");
+						textblock_Core_Max().Text(L"最大频率");
 					}
 				}
 
@@ -168,11 +168,11 @@ namespace winrt::RadeonTuner::implementation
 					//Check if value is offset (RDNA4+)
 					if (tuningFanSettings.PowerVoltage.Minimum.value() < 0)
 					{
-						textblock_Power_Voltage().Text(L"Voltage Offset");
+						textblock_Power_Voltage().Text(L"电压偏移");
 					}
 					else
 					{
-						textblock_Power_Voltage().Text(L"Voltage");
+						textblock_Power_Voltage().Text(L"电压");
 					}
 				}
 
@@ -224,7 +224,7 @@ namespace winrt::RadeonTuner::implementation
 			{
 				//Set hint value
 				bool fanControl = tuningFanSettings.FanControl.Current.value();
-				textblock_Fan_Control_Value().Text(fanControl ? L"Enabled" : L"Disabled");
+				textblock_Fan_Control_Value().Text(fanControl ? L"已启用" : L"已禁用");
 
 				//Enable or disable interface
 				toggleswitch_Fan_Control().IsEnabled(true);
@@ -240,7 +240,7 @@ namespace winrt::RadeonTuner::implementation
 			{
 				//Set hint value
 				bool zeroRpm = tuningFanSettings.FanZeroRpm.Current.value();
-				textblock_Fan_Zero_Rpm_Value().Text(zeroRpm ? L"Enabled" : L"Disabled");
+				textblock_Fan_Zero_Rpm_Value().Text(zeroRpm ? L"已启用" : L"已禁用");
 
 				//Show or hide Zero RPM line
 				grid_Fan_Zero_Rpm_Line_Gpu().Visibility(zeroRpm ? Visibility::Visible : Visibility::Collapsed);

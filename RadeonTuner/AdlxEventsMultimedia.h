@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -37,20 +37,20 @@ namespace winrt::RadeonTuner::implementation
 				if (applyResult)
 				{
 					//Show notification
-					ShowNotification(L"Multimedia settings applied");
+					ShowNotification(L"多媒体设置已应用");
 					AVDebugWriteLine(L"Multimedia settings applied");
 				}
 				else
 				{
 					//Show notification
-					ShowNotification(L"Multimedia settings not applied");
+					ShowNotification(L"多媒体设置未应用");
 					AVDebugWriteLine(L"Multimedia settings not applied");
 				}
 			}
 			else
 			{
 				//Show notification
-				ShowNotification(L"Multimedia settings adjusted");
+				ShowNotification(L"多媒体设置已调整");
 				AVDebugWriteLine(L"Multimedia settings adjusted: " << deviceIdW << L" / " << applicationW);
 			}
 
@@ -68,8 +68,8 @@ namespace winrt::RadeonTuner::implementation
 			if (disable_saving) { co_return; }
 
 			//Confirm reset
-			std::vector<std::wstring> messageAnswers{ L"Yes", L"No" };
-			int messageResult = co_await ShowMessageBox(L"Reset multimedia settings?", L"", messageAnswers);
+			std::vector<std::wstring> messageAnswers{ L"是", L"否" };
+			int messageResult = co_await ShowMessageBox(L"重置多媒体设置？", L"", messageAnswers);
 			if (messageResult == 1)
 			{
 				co_return;
@@ -102,7 +102,7 @@ namespace winrt::RadeonTuner::implementation
 			}
 
 			//Show notification
-			ShowNotification(L"Multimedia settings reset");
+			ShowNotification(L"多媒体设置已重置");
 			AVDebugWriteLine(L"Multimedia settings reset: " << deviceIdW << L" / " << applicationW);
 
 			//Load multimedia settings

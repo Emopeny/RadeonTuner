@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -27,7 +27,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_FsrOverrideUpscaling().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_FsrOverrideUpscaling_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -60,7 +60,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_FsrOverrideFrameGeneration().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_FsrOverrideFrameGeneration_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -93,7 +93,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_FsrOverrideMultiFrameGeneration().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_FsrOverrideMultiFrameGeneration_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -126,7 +126,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_FsrOverrideRayRegeneration().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_FsrOverrideRayRegeneration_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -159,7 +159,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_FsrOverrideNeuralRadianceCaching().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_FsrOverrideNeuralRadianceCaching_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -284,7 +284,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_FsrShowInformation().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_FsrShowInformation_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -317,7 +317,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_FsrLatencyReduction().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_FsrLatencyReduction_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -350,7 +350,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_FrameGenEnabled().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_FrameGenEnabled_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -580,7 +580,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_Frtc().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_Frtc_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -653,7 +653,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_RadeonChill().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_RadeonChill_Value().Text(valueHint);
 
 				//Check Radeon Chill Link
@@ -776,7 +776,7 @@ namespace winrt::RadeonTuner::implementation
 					toggleswitch_RadeonImageSharpening1().IsOn(valueInt);
 
 					//Set hint value
-					std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+					std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 					textblock_RadeonImageSharpening1_Value().Text(valueHint);
 
 					//Enable or disable interface
@@ -793,7 +793,7 @@ namespace winrt::RadeonTuner::implementation
 					toggleswitch_RadeonImageSharpening2().IsOn(valueInt);
 
 					//Set hint value
-					std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+					std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 					textblock_RadeonImageSharpening2_Value().Text(valueHint);
 
 					//Enable or disable interface
@@ -842,7 +842,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_RadeonImageSharpening2_Desktop().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_RadeonImageSharpening2_Desktop_Value().Text(valueHint);
 			}
 			else
@@ -933,7 +933,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_RadeonEnhancedSync().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_RadeonEnhancedSync_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -999,7 +999,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_AntiAliasingOverride().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_AntiAliasingOverride_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -1095,7 +1095,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_AntiAliasingEnhancedQuality().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_AntiAliasingEnhancedQuality_Value().Text(valueHint);
 			}
 			else
@@ -1125,7 +1125,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_MorphologicalAntiAliasing().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_MorphologicalAntiAliasing_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -1224,7 +1224,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_SurfaceFormatOptimization().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_SurfaceFormatOptimization_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -1320,7 +1320,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_OpenGLTripleBuffering().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_OpenGLTripleBuffering_Value().Text(valueHint);
 
 				//Enable or disable interface
@@ -1353,7 +1353,7 @@ namespace winrt::RadeonTuner::implementation
 				toggleswitch_OpenGL10BitPixelFormat().IsOn(valueInt);
 
 				//Set hint value
-				std::wstring valueHint = valueInt ? L"Enabled" : L"Disabled";
+				std::wstring valueHint = valueInt ? L"已启用" : L"已禁用";
 				textblock_OpenGL10BitPixelFormat_Value().Text(valueHint);
 
 				//Enable or disable interface

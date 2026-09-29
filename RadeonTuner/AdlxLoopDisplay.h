@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "AppVariables.h"
@@ -86,7 +86,7 @@ namespace winrt::RadeonTuner::implementation
 							if (applyResult)
 							{
 								//Show notification
-								ShowNotification(L"Display settings applied: " + displaySettingsRunning.Application.value());
+								ShowNotification(L"显示设置已应用： " + displaySettingsRunning.Application.value());
 								AVDebugWriteLine(L"Display settings applied: " << displaySettingsRunning.Application.value());
 
 								//Load display settings

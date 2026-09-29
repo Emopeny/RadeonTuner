@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 
 namespace winrt::RadeonTuner::implementation
@@ -21,7 +21,7 @@ namespace winrt::RadeonTuner::implementation
 			}
 
 			//Show selection prompt
-			int messageResult = co_await ShowMessageBox(L"Select graphics card", L"Select the graphics card you want to adjust.", messageAnswers);
+			int messageResult = co_await ShowMessageBox(L"选择显卡", L"选择要调校的显卡。", messageAnswers);
 
 			//Get selected GPU
 			AdapterInfo adapterInfo = listGpus[messageResult];
@@ -50,7 +50,7 @@ namespace winrt::RadeonTuner::implementation
 			}
 
 			//Show selection prompt
-			int messageResult = co_await ShowMessageBox(L"Select display", L"Select the display you want to adjust.", messageAnswers);
+			int messageResult = co_await ShowMessageBox(L"选择显示器", L"选择要调整的显示器。", messageAnswers);
 
 			//Get selected display
 			ADLDisplayInfo displayInfo = displayList[messageResult];
@@ -75,7 +75,7 @@ namespace winrt::RadeonTuner::implementation
 			messageAnswers.insert(messageAnswers.begin(), L"Global");
 
 			//Show selection prompt
-			int messageResult = co_await ShowMessageBox(L"Select application", L"Select the application you want to adjust.", messageAnswers);
+			int messageResult = co_await ShowMessageBox(L"选择应用程序", L"选择要调整的应用程序。", messageAnswers);
 
 			//Get selected application
 			std::wstring selectedApplication = messageAnswers[messageResult];
@@ -100,7 +100,7 @@ namespace winrt::RadeonTuner::implementation
 			messageAnswers.insert(messageAnswers.begin(), L"Global");
 
 			//Show selection prompt
-			int messageResult = co_await ShowMessageBox(L"Select application", L"Select the application you want to adjust.", messageAnswers);
+			int messageResult = co_await ShowMessageBox(L"选择应用程序", L"选择要调整的应用程序。", messageAnswers);
 
 			//Get selected application
 			std::wstring selectedApplication = messageAnswers[messageResult];
@@ -125,7 +125,7 @@ namespace winrt::RadeonTuner::implementation
 			messageAnswers.insert(messageAnswers.begin(), L"Global");
 
 			//Show selection prompt
-			int messageResult = co_await ShowMessageBox(L"Select application", L"Select the application you want to adjust.", messageAnswers);
+			int messageResult = co_await ShowMessageBox(L"选择应用程序", L"选择要调整的应用程序。", messageAnswers);
 
 			//Get selected application
 			std::wstring selectedApplication = messageAnswers[messageResult];

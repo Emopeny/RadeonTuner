@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -15,7 +15,7 @@ namespace winrt::RadeonTuner::implementation
 			//Check file path
 			if (exportPath.empty())
 			{
-				ShowNotification(L"Graphics not exported, no path set");
+				ShowNotification(L"显卡设置未导出，未设置路径");
 				AVDebugWriteLine(L"Graphics not exported, no path set");
 				return;
 			}
@@ -26,19 +26,19 @@ namespace winrt::RadeonTuner::implementation
 			//Set result
 			if (saveResult)
 			{
-				ShowNotification(L"Graphics settings exported");
+				ShowNotification(L"显卡设置已导出");
 				AVDebugWriteLine(L"Graphics settings exported");
 			}
 			else
 			{
-				ShowNotification(L"Graphics export failed");
+				ShowNotification(L"显卡设置导出失败");
 				AVDebugWriteLine(L"Graphics export failed");
 			}
 		}
 		catch (...)
 		{
 			//Set result
-			ShowNotification(L"Graphics not exported, exception");
+			ShowNotification(L"显卡未导出，异常");
 			AVDebugWriteLine(L"Graphics not exported, exception");
 		}
 	}

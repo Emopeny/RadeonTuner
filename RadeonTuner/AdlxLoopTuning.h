@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "AppVariables.h"
@@ -98,7 +98,7 @@ namespace winrt::RadeonTuner::implementation
 								if (applyResult)
 								{
 									//Show notification
-									ShowNotification(L"Tuning and fans settings applied: " + tuningFanSettingsRunning.Application.value());
+									ShowNotification(L"调校和风扇设置已应用： " + tuningFanSettingsRunning.Application.value());
 									AVDebugWriteLine(L"Tuning and fans settings applied: " << tuningFanSettingsRunning.Application.value());
 
 									//Load tuning and fans settings

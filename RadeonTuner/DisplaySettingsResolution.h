@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -37,12 +37,12 @@ namespace winrt::RadeonTuner::implementation
 			//Show result
 			if (newFailed)
 			{
-				ShowNotification(L"Failed reverting display");
+				ShowNotification(L"还原显示失败");
 				AVDebugWriteLine(L"Failed reverting display");
 			}
 			else
 			{
-				ShowNotification(L"Display reverted to " + resolutionString);
+				ShowNotification(L"显示已恢复为 " + resolutionString);
 				AVDebugWriteLine(L"Display reverted to " << resolutionString);
 			}
 		}
@@ -60,7 +60,7 @@ namespace winrt::RadeonTuner::implementation
 			//Show overlay
 			grid_Main().IsHitTestVisible(false);
 			grid_Overlay_ConfirmResolution().Visibility(Visibility::Visible);
-			textblock_Overlay_ConfirmResolution_SubText().Text(L"Reverting in " + number_to_wstring(displayResolutionConfirmTimeSec) + L" seconds...");
+			textblock_Overlay_ConfirmResolution_SubText().Text(L"还原倒计时 " + number_to_wstring(displayResolutionConfirmTimeSec) + L" 秒...");
 
 			//Resolution switch timer tick
 			std::function<void(IInspectable const& sender, IInspectable const& e)> tickFunction = [&](auto, auto)
@@ -71,7 +71,7 @@ namespace winrt::RadeonTuner::implementation
 						displayResolutionConfirmTimeSec -= 1;
 
 						//Update countdown text
-						textblock_Overlay_ConfirmResolution_SubText().Text(L"Reverting in " + number_to_wstring(displayResolutionConfirmTimeSec) + L" seconds...");
+						textblock_Overlay_ConfirmResolution_SubText().Text(L"还原倒计时 " + number_to_wstring(displayResolutionConfirmTimeSec) + L" 秒...");
 
 						//Check if time is up and revert resolution
 						if (displayResolutionConfirmTimeSec <= 0)

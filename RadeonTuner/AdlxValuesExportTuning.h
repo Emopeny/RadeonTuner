@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -15,7 +15,7 @@ namespace winrt::RadeonTuner::implementation
 			//Check file path
 			if (exportPath.empty())
 			{
-				ShowNotification(L"Tuning and fans not exported, no path set");
+				ShowNotification(L"调校与风扇未导出，未设置路径");
 				AVDebugWriteLine(L"Tuning and fans not exported, no path set");
 				return;
 			}
@@ -26,19 +26,19 @@ namespace winrt::RadeonTuner::implementation
 			//Set result
 			if (saveResult)
 			{
-				ShowNotification(L"Tuning and fans exported");
+				ShowNotification(L"调校和风扇已导出");
 				AVDebugWriteLine(L"Tuning and fans exported");
 			}
 			else
 			{
-				ShowNotification(L"Tuning and fans export failed");
+				ShowNotification(L"调校和风扇导出失败");
 				AVDebugWriteLine(L"Tuning and fans export failed");
 			}
 		}
 		catch (...)
 		{
 			//Set result
-			ShowNotification(L"Tuning and fans not exported, exception");
+			ShowNotification(L"调校和风扇未导出，发生异常");
 			AVDebugWriteLine(L"Tuning and fans not exported, exception");
 		}
 	}

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -33,7 +33,7 @@ namespace winrt::RadeonTuner::implementation
 			if (adl_Res0 == ADL_OK)
 			{
 				//Show notification
-				ShowNotification(L"Custom resolution created");
+				ShowNotification(L"已创建自定义分辨率");
 				AVDebugWriteLine(L"Custom resolution created");
 
 				//Show confirm overlay
@@ -57,7 +57,7 @@ namespace winrt::RadeonTuner::implementation
 			else
 			{
 				//Show notification
-				ShowNotification(L"Failed creating custom resolution");
+				ShowNotification(L"创建自定义分辨率失败");
 				AVDebugWriteLine(L"Failed creating custom resolution: " << adl_Res0);
 
 				//Return result
@@ -98,7 +98,7 @@ namespace winrt::RadeonTuner::implementation
 			if (adl_Res0 == ADL_OK)
 			{
 				//Show notification
-				ShowNotification(L"Custom resolution removed");
+				ShowNotification(L"自定义分辨率已移除");
 				AVDebugWriteLine(L"Custom resolution removed");
 
 				//Disable saving
@@ -117,7 +117,7 @@ namespace winrt::RadeonTuner::implementation
 			else
 			{
 				//Show notification
-				ShowNotification(L"Failed removing custom resolution");
+				ShowNotification(L"移除自定义分辨率失败");
 				AVDebugWriteLine(L"Failed removing custom resolution: " << adl_Res0);
 
 				//Return result
@@ -420,7 +420,7 @@ namespace winrt::RadeonTuner::implementation
 			//Show overlay
 			grid_Main().IsHitTestVisible(false);
 			grid_Overlay_ConfirmResolution().Visibility(Visibility::Visible);
-			textblock_Overlay_ConfirmResolution_SubText().Text(L"Removing custom resolution in " + number_to_wstring(displayResolutionConfirmTimeSec) + L" seconds...");
+			textblock_Overlay_ConfirmResolution_SubText().Text(L"正在移除自定义分辨率 " + number_to_wstring(displayResolutionConfirmTimeSec) + L" 秒...");
 
 			//Resolution switch timer tick
 			std::function<void(IInspectable const& sender, IInspectable const& e)> tickFunction = [&](auto, auto)
@@ -431,7 +431,7 @@ namespace winrt::RadeonTuner::implementation
 						displayResolutionConfirmTimeSec -= 1;
 
 						//Update countdown text
-						textblock_Overlay_ConfirmResolution_SubText().Text(L"Removing custom resolution in " + number_to_wstring(displayResolutionConfirmTimeSec) + L" seconds...");
+						textblock_Overlay_ConfirmResolution_SubText().Text(L"正在移除自定义分辨率 " + number_to_wstring(displayResolutionConfirmTimeSec) + L" 秒...");
 
 						//Check if time is up and remove resolution
 						if (displayResolutionConfirmTimeSec <= 0)

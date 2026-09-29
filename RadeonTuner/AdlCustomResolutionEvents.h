@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -85,7 +85,7 @@ namespace winrt::RadeonTuner::implementation
 			if (adl_Res0 != ADL_OK)
 			{
 				//Show notification
-				ShowNotification(L"Failed getting custom resolutions");
+				ShowNotification(L"获取自定义分辨率失败");
 				AVDebugWriteLine(L"Failed getting custom resolutions");
 				co_return;
 			}
@@ -93,7 +93,7 @@ namespace winrt::RadeonTuner::implementation
 			if (numInfoList <= 0)
 			{
 				//Show notification
-				ShowNotification(L"No custom resolution set");
+				ShowNotification(L"未设置自定义分辨率");
 				AVDebugWriteLine(L"No custom resolution set");
 				co_return;
 			}
@@ -108,10 +108,10 @@ namespace winrt::RadeonTuner::implementation
 			}
 
 			//Add cancel option
-			messageAnswers.push_back(L"Cancel");
+			messageAnswers.push_back(L"取消");
 
 			//Show selection prompt
-			int messageResult = co_await ShowMessageBox(L"Select custom resolution", L"Select the custom resolution you want to remove.", messageAnswers);
+			int messageResult = co_await ShowMessageBox(L"选择自定义分辨率", L"选择要移除的自定义分辨率。", messageAnswers);
 
 			//Check if cancelled
 			if (messageResult == (messageAnswers.size() - 1))
@@ -129,7 +129,7 @@ namespace winrt::RadeonTuner::implementation
 		catch (...)
 		{
 			//Show notification
-			ShowNotification(L"Failed removing custom resolution");
+			ShowNotification(L"移除自定义分辨率失败");
 			AVDebugWriteLine(L"Failed removing custom resolution (Exception)");
 		}
 	}
@@ -144,7 +144,7 @@ namespace winrt::RadeonTuner::implementation
 		catch (...)
 		{
 			//Show notification
-			ShowNotification(L"Failed creating custom resolution");
+			ShowNotification(L"创建自定义分辨率失败");
 			AVDebugWriteLine(L"Failed creating custom resolution (Exception)");
 		}
 	}

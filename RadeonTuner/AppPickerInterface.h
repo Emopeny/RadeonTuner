@@ -12,8 +12,8 @@ namespace winrt::RadeonTuner::implementation
 		try
 		{
 			//Select application source
-			std::vector<std::wstring> messageAnswers{ L"Executable file", L"Game from launcher", L"Running process", L"Cancel" };
-			int messageResult = co_await ShowMessageBox(L"Add application", L"Select the source you want to add an application from.", messageAnswers);
+			std::vector<std::wstring> messageAnswers{ L"可执行文件", L"来自启动器的游戏", L"正在运行的进程", L"取消" };
+			int messageResult = co_await ShowMessageBox(L"添加应用程序", L"选择要从中添加应用程序的来源。", messageAnswers);
 
 			//Show application picker
 			if (messageResult == 0)
@@ -128,8 +128,8 @@ namespace winrt::RadeonTuner::implementation
 			//Show application picker
 			button_Overlay_AppPicker_Confirm().Visibility(Visibility::Visible);
 			button_Overlay_AppPicker_Cancel().Visibility(Visibility::Visible);
-			button_Overlay_AppPicker_Confirm().Content(box_value(L"Add selected"));
-			textblock_Overlay_AppPicker_Text().Text(L"Add processes");
+			button_Overlay_AppPicker_Confirm().Content(box_value(L"添加所选项"));
+			textblock_Overlay_AppPicker_Text().Text(L"添加进程");
 			grid_Overlay_AppPicker().Visibility(Visibility::Visible);
 
 			//Set combobox items source
@@ -269,8 +269,8 @@ namespace winrt::RadeonTuner::implementation
 			//Show application picker
 			button_Overlay_AppPicker_Confirm().Visibility(Visibility::Visible);
 			button_Overlay_AppPicker_Cancel().Visibility(Visibility::Visible);
-			button_Overlay_AppPicker_Confirm().Content(box_value(L"Add selected"));
-			textblock_Overlay_AppPicker_Text().Text(L"Add games");
+			button_Overlay_AppPicker_Confirm().Content(box_value(L"添加所选项"));
+			textblock_Overlay_AppPicker_Text().Text(L"添加游戏");
 			grid_Overlay_AppPicker().Visibility(Visibility::Visible);
 
 			//Set combobox items source
@@ -341,8 +341,8 @@ namespace winrt::RadeonTuner::implementation
 			//Show application picker
 			button_Overlay_AppPicker_Confirm().Visibility(Visibility::Visible);
 			button_Overlay_AppPicker_Cancel().Visibility(Visibility::Visible);
-			button_Overlay_AppPicker_Confirm().Content(box_value(L"Remove selected"));
-			textblock_Overlay_AppPicker_Text().Text(L"Remove applications");
+			button_Overlay_AppPicker_Confirm().Content(box_value(L"移除所选"));
+			textblock_Overlay_AppPicker_Text().Text(L"移除应用程序");
 			grid_Overlay_AppPicker().Visibility(Visibility::Visible);
 
 			//Set combobox items source
@@ -413,8 +413,8 @@ namespace winrt::RadeonTuner::implementation
 			//Show application picker
 			button_Overlay_AppPicker_Confirm().Visibility(Visibility::Visible);
 			button_Overlay_AppPicker_Cancel().Visibility(Visibility::Visible);
-			button_Overlay_AppPicker_Confirm().Content(box_value(L"Remove selected"));
-			textblock_Overlay_AppPicker_Text().Text(L"Remove applications");
+			button_Overlay_AppPicker_Confirm().Content(box_value(L"移除所选"));
+			textblock_Overlay_AppPicker_Text().Text(L"移除应用程序");
 			grid_Overlay_AppPicker().Visibility(Visibility::Visible);
 
 			//Set combobox items source
@@ -485,8 +485,8 @@ namespace winrt::RadeonTuner::implementation
 			//Show application picker
 			button_Overlay_AppPicker_Confirm().Visibility(Visibility::Visible);
 			button_Overlay_AppPicker_Cancel().Visibility(Visibility::Visible);
-			button_Overlay_AppPicker_Confirm().Content(box_value(L"Remove selected"));
-			textblock_Overlay_AppPicker_Text().Text(L"Remove applications");
+			button_Overlay_AppPicker_Confirm().Content(box_value(L"移除所选"));
+			textblock_Overlay_AppPicker_Text().Text(L"移除应用程序");
 			grid_Overlay_AppPicker().Visibility(Visibility::Visible);
 
 			//Set combobox items source

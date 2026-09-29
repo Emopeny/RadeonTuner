@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 
 namespace winrt::RadeonTuner::implementation
@@ -46,7 +46,7 @@ namespace winrt::RadeonTuner::implementation
 			}
 			else
 			{
-				ShowNotification(L"AMD Cleanup Utility has not been found");
+				ShowNotification(L"未找到 AMD Cleanup Utility");
 				AVDebugWriteLine("No soup for you! AMD Cleanup Utility has not been found.");
 			}
 		}
@@ -66,7 +66,7 @@ namespace winrt::RadeonTuner::implementation
 				std::wstring onlineVersion = updateCheckResult.UpdateVersion;
 
 				//Show messagebox
-				int messageResult = co_await ShowMessageBox(L"Newer version has been found", L"Would you like to update the application to " + onlineVersion + L"?", { L"Yes", L"No" });
+				int messageResult = co_await ShowMessageBox(L"已找到更新的版本", L"是否要将应用程序更新到 " + onlineVersion + L"?", { L"是", L"否" });
 
 				//Check messagebox result
 				if (messageResult == 0)
@@ -77,7 +77,7 @@ namespace winrt::RadeonTuner::implementation
 			}
 			else
 			{
-				co_await ShowMessageBox(L"Update check", L"No new application update has been found.", { L"Ok" });
+				co_await ShowMessageBox(L"检查更新", L"未发现新的应用程序更新。", { L"Ok" });
 			}
 		}
 		catch (...) {}
@@ -88,7 +88,7 @@ namespace winrt::RadeonTuner::implementation
 		try
 		{
 			//Show messagebox
-			int messageResult = co_await ShowMessageBox(L"New update available", L"Would you like to update the application to the latest version?", { L"Yes", L"No" });
+			int messageResult = co_await ShowMessageBox(L"有新更新可用", L"是否要将应用程序更新到最新版本？", { L"是", L"否" });
 
 			//Check messagebox result
 			if (messageResult == 0)

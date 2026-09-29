@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "MainPage.h"
 #include "MainVariables.h"
@@ -19,7 +19,7 @@ namespace winrt::RadeonTuner::implementation
 			//Check selected items
 			if (selectedAppsCount == 0)
 			{
-				ShowNotification(L"No applications selected");
+				ShowNotification(L"未选择任何应用程序");
 				AVDebugWriteLine(L"No applications selected.");
 				co_return;
 			}
@@ -50,7 +50,7 @@ namespace winrt::RadeonTuner::implementation
 
 			//Show notification
 			//Fix show fail and duplicate count
-			ShowNotification(L"Applications added: " + number_to_wstring(addCount) + L" / " + number_to_wstring(selectedAppsCount));
+			ShowNotification(L"已添加应用程序： " + number_to_wstring(addCount) + L" / " + number_to_wstring(selectedAppsCount));
 			AVDebugWriteLine(L"Applications added: " << addCount << L" / " << selectedAppsCount);
 		}
 		catch (...) {}
@@ -70,7 +70,7 @@ namespace winrt::RadeonTuner::implementation
 			//Check selected items
 			if (selectedAppsCount == 0)
 			{
-				ShowNotification(L"No applications selected");
+				ShowNotification(L"未选择任何应用程序");
 				AVDebugWriteLine(L"No applications selected.");
 				co_return;
 			}
@@ -112,7 +112,7 @@ namespace winrt::RadeonTuner::implementation
 
 			//Show notification
 			//Fix show fail and duplicate count
-			ShowNotification(L"Applications removed: " + number_to_wstring(removeCount) + L" / " + number_to_wstring(selectedAppsCount));
+			ShowNotification(L"已移除的应用程序： " + number_to_wstring(removeCount) + L" / " + number_to_wstring(selectedAppsCount));
 			AVDebugWriteLine(L"Applications removed: " << removeCount << L" / " << selectedAppsCount);
 
 			//Check selected application and reload
@@ -165,20 +165,20 @@ namespace winrt::RadeonTuner::implementation
 				if (applyResult)
 				{
 					//Show notification
-					ShowNotification(L"Display settings applied");
+					ShowNotification(L"显示设置已应用");
 					AVDebugWriteLine(L"Display settings applied: " << deviceIdW << L" / " << applicationW);
 				}
 				else
 				{
 					//Show notification
-					ShowNotification(L"Failed applying display settings");
+					ShowNotification(L"应用显示设置失败");
 					AVDebugWriteLine(L"Failed applying display settings: " << deviceIdW << L" / " << applicationW);
 				}
 			}
 			else
 			{
 				//Show notification
-				ShowNotification(L"Display settings adjusted");
+				ShowNotification(L"显示设置已调整");
 				AVDebugWriteLine(L"Display settings adjusted: " << deviceIdW << L" / " << applicationW);
 			}
 
@@ -196,8 +196,8 @@ namespace winrt::RadeonTuner::implementation
 			if (disable_saving) { co_return; }
 
 			//Confirm reset
-			std::vector<std::wstring> messageAnswers{ L"Yes", L"No" };
-			int messageResult = co_await ShowMessageBox(L"Reset display settings?", L"", messageAnswers);
+			std::vector<std::wstring> messageAnswers{ L"是", L"否" };
+			int messageResult = co_await ShowMessageBox(L"重置显示设置？", L"", messageAnswers);
 			if (messageResult == 1)
 			{
 				co_return;
@@ -236,7 +236,7 @@ namespace winrt::RadeonTuner::implementation
 			}
 
 			//Show notification
-			ShowNotification(L"Display settings reset");
+			ShowNotification(L"显示设置已重置");
 			AVDebugWriteLine(L"Display settings reset: " << deviceIdW << L" / " << applicationW);
 
 			//Load display settings
@@ -816,13 +816,13 @@ namespace winrt::RadeonTuner::implementation
 			//Show result
 			if (newFailed)
 			{
-				ShowNotification(L"Failed setting display resolution");
+				ShowNotification(L"设置显示分辨率失败");
 				AVDebugWriteLine(L"Failed setting display resolution");
 			}
 			else
 			{
 				std::wstring valueString = number_to_wstring(newValue.ResolutionWidth()) + L"x" + number_to_wstring(newValue.ResolutionHeight());
-				ShowNotification(L"Display resolution set to " + valueString);
+				ShowNotification(L"显示分辨率已设置为 " + valueString);
 				AVDebugWriteLine(L"Display resolution set to " << newIndex);
 
 				//Show confirm overlay
@@ -872,13 +872,13 @@ namespace winrt::RadeonTuner::implementation
 			//Show result
 			if (newFailed)
 			{
-				ShowNotification(L"Failed setting display refresh rate");
+				ShowNotification(L"设置显示器刷新率失败");
 				AVDebugWriteLine(L"Failed setting display refresh rate");
 			}
 			else
 			{
 				std::wstring valueString = float_to_wstring(newValue.RefreshRate(), 2) + L" Hz";
-				ShowNotification(L"Display refresh rate set to " + valueString);
+				ShowNotification(L"显示刷新率已设置为 " + valueString);
 				AVDebugWriteLine(L"Display refresh rate set to " << newIndex);
 
 				//Show confirm overlay
@@ -939,12 +939,12 @@ namespace winrt::RadeonTuner::implementation
 			//Show result
 			if (newFailed)
 			{
-				ShowNotification(L"Failed setting display orientation");
+				ShowNotification(L"设置显示方向失败");
 				AVDebugWriteLine(L"Failed setting display orientation");
 			}
 			else
 			{
-				ShowNotification(L"Display orientation set to " + ADL_DISPLAY_ORIENTATIONS[newValue]);
+				ShowNotification(L"显示方向设置为 " + ADL_DISPLAY_ORIENTATIONS[newValue]);
 				AVDebugWriteLine(L"Display orientation set to " << newValue);
 			}
 		}
