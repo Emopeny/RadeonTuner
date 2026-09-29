@@ -1,4 +1,6 @@
 ![RadeonTuner](Screenshots/screenshot1.png)
+
+[简体中文说明 (Simplified Chinese)](Readme.zh-CN.md)
 ![RadeonTuner](Screenshots/screenshot2.png)
 ![RadeonTuner](Screenshots/screenshot3.png)
 
